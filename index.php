@@ -29,7 +29,7 @@ $page_aside = '';
 // Obtém todos os artigos do site:
 $sql = <<<SQL
 
-SELECT 
+SELECT
 art_id, art_title, art_thumb, art_intro
 FROM `articles`
 WHERE art_status = 'on'
@@ -71,11 +71,11 @@ endwhile;
 // Obtém a lista dos artigos mais acessados:
 $sql = <<<SQL
 
-SELECT art_id, art_title 
-FROM `articles` 
-WHERE art_status = 'on' 
-AND art_date <= NOW() 
-ORDER BY art_counter DESC 
+SELECT art_id, art_title
+FROM `articles`
+WHERE art_status = 'on'
+AND art_date <= NOW()
+ORDER BY art_counter DESC
 LIMIT 5;
 
 SQL;
@@ -99,10 +99,10 @@ endwhile;
 // Obtém os comentários mais recentes:
 $sql = <<<SQL
 
-SELECT cmt_article, cmt_content 
-FROM `comments` 
-WHERE cmt_status = 'on' 
-ORDER BY cmt_date 
+SELECT cmt_article, cmt_content
+FROM `comments`
+WHERE cmt_status = 'on'
+ORDER BY cmt_date
 DESC LIMIT 5;
 
 SQL;
